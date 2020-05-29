@@ -22,8 +22,8 @@ public class Calculator
 {
   public static void main (String args[])
  {
-  double p1=Calculator.powerInt(2,5);
-  double p2=Calculator.powerDouble(2.5,3);
+  double p1=Calculator.powerInt(3,6);
+  double p2=Calculator.powerDouble(3.5,5);
   System.out.println("The result of pwerInt:"+p1);
   System.out.println("The result of pwerDouble:"+p2);
   
