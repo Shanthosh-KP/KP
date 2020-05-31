@@ -1,0 +1,44 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+
+import jdk.internal.dynalink.beans.StaticClass;
+
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'counts' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY teamA
+     *  2. INTEGER_ARRAY teamB
+     */
+
+    public static List<Integer> counts(List<Integer> teamA, List<Integer> teamB) {
+    int i,j;
+    int R = teamA.size();
+    int C = teamB.size();
+    int A[] = new int[R];
+    int B[] = new int[C]; 
+    for(i=0;i<C;i++){
+    for(j=0;j<R;j++){
+      if(C>=R){
+       int c[] = new c[R+C];
+        System.out.println(counts(c));
+      }
+    }
+}
+  }
+ }
