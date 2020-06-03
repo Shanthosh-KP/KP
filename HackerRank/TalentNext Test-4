@@ -1,0 +1,33 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+class Result {
+
+    /*
+     * Complete the 'countPalindromes' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static int countPalindromes(String s) {
+   int rev = s.length(), count = 0;
+        for (int c=0;c<=2*rev-1;++c) {
+            int l= c/2;
+            int r= l+ c%2;
+            while (l>= 0 && r<rev && s.charAt(l)==s.charAt(r)) {
+                count++;
+                l--;
+                r++;
+            }
+        }
+        return count;
+    }
+}
