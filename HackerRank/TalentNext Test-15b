@@ -1,0 +1,22 @@
+public static SinglyLinkedListNode condense(SinglyLinkedListNode head) {
+    // Write your code here 
+    int data;
+     SinglyLinkedListNode head1 = null, next = null;
+    while (head != null) {
+        if (head.data <= data) {
+            SinglyLinkedListNode node = new SinglyLinkedListNode();
+            node.data = head.data;
+            if(head1 == null) {
+                head1 = next = node;
+            } else {
+                next.next = node;
+                next = node;
+            }
+        }
+
+        head = head.next;
+    }
+
+    return head1;
+}
+    }
