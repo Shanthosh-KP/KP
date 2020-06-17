@@ -1,0 +1,68 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+class Result {
+
+    /*
+     * Complete the 'fibonacci' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static List<Integer> fibonacci(int n) {
+    // Write your code here
+        if (n == 0) {
+            return new ArrayList<>();
+        }
+        if (n == 1) {
+            return Arrays.asList(0);
+        }
+        if (n == 2) {
+            return Arrays.asList(0, 1);
+        }
+        final List<Integer> seq = new ArrayList<>(n);
+            seq.add(0);
+            n = n - 1;
+            seq.add(1);
+            n = n - 1;
+        while (n > 0) {
+            int a = seq.get(seq.size() - 1);
+            int b = seq.get(seq.size() - 2);
+            seq.add(a + b);
+            n = n - 1;
+        }
+        return seq;
+
+    }
+
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        List<Integer> result = Result.fibonacci(n);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
